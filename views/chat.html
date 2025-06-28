@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reflecto Chatbot</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>🤖 Welcome to Reflecto</h1>
+    <div>
+        <% history.forEach(function(message) { %>
+            <p><strong><%= message.role.charAt(0).toUpperCase() + message.role.slice(1) %>:</strong> <%= message.content %></p>
+        <% }); %>
+    </div>
+    <form method="post">
+        <input type="text" name="user_input" placeholder="Ask your question..." required autofocus>
+        <button type="submit">Send</button>
+        <a href="/refresh"><button type="button">Refresh</button></a>
+    </form>
+</body>
+</html>
